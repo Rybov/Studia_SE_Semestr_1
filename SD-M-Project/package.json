@@ -1,0 +1,49 @@
+{
+  "name": "sd-m-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "app": "npx tsc && node dist/main.js",
+    "test": "ts-node node_modules/jasmine/bin/jasmine --config=jasmine.json",
+    "coverage": "nyc ts-node node_modules/jasmine/bin/jasmine --config=jasmine.json"
+  },
+  "nyc": {
+    "extends": "@istanbuljs/nyc-config-typescript",
+    "extension": [
+      ".ts"
+    ],
+    "include": [
+      "src"
+    ],
+    "exclude": [
+      "**/*.spec.ts",
+      "",
+      "import*",
+      "coverage"
+    ],
+    "all": true,
+    "check-coverage": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rybov/SD-M-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@istanbuljs/nyc-config-typescript": "^1.0.1",
+    "@types/jasmine": "^3.6.9",
+    "istanbul": "^0.4.5",
+    "jasmine": "^3.7.0",
+    "nyc": "^15.1.0",
+    "source-map-support": "^0.5.19",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "@types/node": "^15.0.3",
+    "@types/prompt-sync": "^4.1.0",
+    "prompt-sync": "^4.2.0"
+  }
+}
